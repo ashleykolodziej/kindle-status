@@ -11,7 +11,7 @@ body {
 	height: 600px;
 	border: 1px solid gray;
 	-webkit-filter: grayscale(100%);
-   filter: grayscale(100%);
+	filter: grayscale(100%);
 }
 
 .content-container {
@@ -38,7 +38,7 @@ body {
 }
 
 .fc-scrollgrid {
-	border-left: none !important;
+	border: none !important;
 }
 
 .fc .fc-timegrid-slot-label,
@@ -100,7 +100,7 @@ body {
 .fc-v-event.is-traveling {
 	background-color: #000;
 
-	&:before {
+	&::before {
 		content: '🚗';
 		background-color: #fff;
 		padding: 5px;
@@ -117,17 +117,13 @@ body {
 		color: #000;
 	}
 
-	&:before {
+	&::before {
 		content: '🐰';
 		margin-left: 10px;
 		background-color: #000;
 		padding: 5px;
 		border-radius: 50%;
 	}
-}
-
-.fc-scrollgrid {
-	border: none !important;
 }
 
 // Temporarily disable the error overlay.

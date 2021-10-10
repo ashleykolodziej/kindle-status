@@ -4,6 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import iCalendarPlugin from '@fullcalendar/icalendar';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import moment from 'moment';
+import { Puppeteer } from 'puppeteer';
 
 // Globals
 const calendarEl = document.createElement('div');
@@ -109,5 +110,23 @@ const calendar = new Calendar(calendarEl, {
 	expandRows: true,
 	displayEventTime: false,
 });
+
+const capture = async () => {
+	const browser = await Puppeteer.launch();
+	const page = await browser.newPage();
+
+	await page.setViewport({
+		width: 800,
+		height: 600,
+	});
+
+	await page.goto('https://ashleykolodziej.github.io/kindle-status/');
+	await page.screenshot({
+		path: 'schedule.png',
+		fullPage: true,
+	});
+
+	await browser.close();
+};
 
 document.body.appendChild(calendarEl);
