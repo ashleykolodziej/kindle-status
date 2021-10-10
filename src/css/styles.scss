@@ -3,44 +3,135 @@
 // Try commenting this out and saving. What changes in the browser?
 @import "~normalize.css";
 
-// An example of a partial.
-// Check out the _typography.scss file to edit the CSS inside!
-@import "typography";
-@import "layout";
+body {
+	font-family: 'Bitter', serif;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	width: 800px;
+	height: 600px;
+	border: 1px solid gray;
+	-webkit-filter: grayscale(100%);
+   filter: grayscale(100%);
+}
 
-// You can still write styles in this file too.
-// Here's an example of how you could write media queries more easily with Sass.
+.content-container {
+	align-items: center;
+	display: flex;
+	grid-column: span 2;
+	padding: 7%;
 
-$large-phone: 500px;
-$tablet-vertical: 768px;
-$desktop: 1200px;
-
-// And some color variables.
-// Look how much easier it is to keep track of what these are than hex codes!
-
-$red: #ab424a;
-$orange: #dd7c00;
-$green: #3b975f;
-$blue: #4261ab;
-
-.page-heading {
-	color: $red;
-
-	// Sass lets you write your media queries inline if you want.
-	// This is why I'm always forgetting I have to put the class inside
-	// the media query in regular CSS. I never have to in Sass!
-	// I like combining these with variables to make it easier to read
-	// my media queries.
-
-	@media screen and (min-width: $large-phone) {
-		color: $orange;
+	h1 {
+		font-size: 90px;
+		margin: 0;
+		line-height: 1;
+		margin-bottom: 10px;
 	}
 
-	@media screen and (min-width: $tablet-vertical) {
-		color: $green;
+	p {
+		font-size: 22px;
+		margin-top: 0;
+	}
+}
+
+.fc-timegrid-slot-label {
+	border: none !important;
+}
+
+.fc-scrollgrid {
+	border-left: none !important;
+}
+
+.fc .fc-timegrid-slot-label,
+.fc .fc-timegrid-axis-cushion {
+	vertical-align: top;
+	font-size: 11px;
+	font-weight: 600;
+}
+
+.fc-timegrid-axis {
+	border: none !important;
+}
+
+.fc .fc-timegrid-axis-frame {
+	align-items: baseline;
+}
+
+.fc-timegrid-divider {
+	display: none;
+}
+
+.fc-scrollgrid-section td:last-child {
+	border-bottom: 0;
+}
+
+.fc-v-event .fc-event-title {
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.fc-v-event {
+	background: rgba(0, 0, 0, 0.5);
+	border-color: currentColor;
+	border-left: 10px solid;
+	display: flex;
+	align-items: center;
+}
+
+.fc-v-event.is-canceled {
+	background-color: rgba(255, 255, 255, 1);
+	border-style: dashed;
+	border-left: 10px solid;
+	border-color: #aaa;
+
+	.fc-event-title {
+		color: #aaa;
+	}
+}
+
+.fc-v-event .fc-event-main {
+	height: auto;
+	margin-left: 5px;
+}
+
+.fc-theme-standard td {
+	border-color: #aaa;
+}
+
+.fc-v-event.is-traveling {
+	background-color: #000;
+
+	&:before {
+		content: '🚗';
+		background-color: #fff;
+		padding: 5px;
+		border-radius: 50%;
+	}
+}
+
+.fc-v-event.is-focused {
+	background-color: #eee;
+	border-left: 1px solid;
+	border-style: dashed;
+
+	.fc-event-title {
+		color: #000;
 	}
 
-	@media screen and (min-width: $desktop) {
-		color: $blue;
+	&:before {
+		content: '🐰';
+		margin-left: 10px;
+		background-color: #000;
+		padding: 5px;
+		border-radius: 50%;
 	}
+}
+
+.fc-scrollgrid {
+	border: none !important;
+}
+
+// Temporarily disable the error overlay.
+
+#webpack-dev-server-client-overlay {
+	display: none !important;
 }

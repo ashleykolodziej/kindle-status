@@ -78,6 +78,11 @@
     "webpackbar": "^5.0.0-3"
   },
   "dependencies": {
+    "@fullcalendar/core": "^5.9.0",
+    "@fullcalendar/daygrid": "^5.9.0",
+    "@fullcalendar/icalendar": "^5.9.0",
+    "@fullcalendar/timegrid": "^5.9.0",
+    "moment": "^2.29.1",
     "normalize.css": "^8.0.1",
     "webpack-dev-server": "^4.0.0"
   }
