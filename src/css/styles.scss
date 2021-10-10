@@ -31,7 +31,16 @@ body {
 	p {
 		font-size: 22px;
 		margin-top: 0;
+		margin-bottom: 0;
 	}
+}
+
+p.status-label {
+	border-radius: 0.25em;
+	margin-bottom: 1em;
+	background-color: #eee;
+	padding: 0.25em 0.5em;
+	display: inline-block;
 }
 
 p.notice {
@@ -136,7 +145,7 @@ p.notice {
 
 th.fc-day-mon,
 th.fc-day-tue {
-	a:after {
+	a::after {
 		content: " (WFH)";
 		margin-left: 5px;
 		opacity: 0.5;
