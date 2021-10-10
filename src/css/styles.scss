@@ -11,12 +11,13 @@ body {
 	height: 600px;
 	border: 1px solid gray;
 	-webkit-filter: grayscale(100%);
-   filter: grayscale(100%);
+	filter: grayscale(100%);
 }
 
 .content-container {
 	align-items: center;
 	display: flex;
+	flex-wrap: wrap;
 	grid-column: span 2;
 	padding: 7%;
 
@@ -33,12 +34,19 @@ body {
 	}
 }
 
+p.notice {
+	font-style: italic;
+	font-size: 14px;
+	width: 100%;
+	align-self: flex-end;
+}
+
 .fc-timegrid-slot-label {
 	border: none !important;
 }
 
 .fc-scrollgrid {
-	border-left: none !important;
+	border: none !important;
 }
 
 .fc .fc-timegrid-slot-label,
@@ -100,7 +108,7 @@ body {
 .fc-v-event.is-traveling {
 	background-color: #000;
 
-	&:before {
+	&::before {
 		content: '🚗';
 		background-color: #fff;
 		padding: 5px;
@@ -117,7 +125,7 @@ body {
 		color: #000;
 	}
 
-	&:before {
+	&::before {
 		content: '🐰';
 		margin-left: 10px;
 		background-color: #000;
@@ -126,8 +134,13 @@ body {
 	}
 }
 
-.fc-scrollgrid {
-	border: none !important;
+th.fc-day-mon,
+th.fc-day-tue {
+	a:after {
+		content: " (WFH)";
+		margin-left: 5px;
+		opacity: 0.5;
+	}
 }
 
 // Temporarily disable the error overlay.
