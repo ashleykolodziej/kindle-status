@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-test_ip="https://icanhazip.com"
+test_ip="icanhazip.com"
 
 if [ -z "$test_ip" ]; then
   echo "No test ip specified"
