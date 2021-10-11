@@ -34,7 +34,7 @@
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js",
     "deploy": "npm run build && gh-pages -d dist",
     "test": "npm run lint && chalk green --no-stdin \"✓ All tests passed. Nice work!\"",
-	 "capture": "node src/js/capture.js"
+    "capture": "node src/js/capture.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
