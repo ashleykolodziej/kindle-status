@@ -71,7 +71,7 @@ function checkCalendarStatus(event) {
 const calendar = new Calendar(calendarEl, {
 	plugins: [dayGridPlugin, iCalendarPlugin, timeGridPlugin],
 	events: {
-		url: 'https://outlook.office365.com/owa/calendar/1bc7c0cffeb1419ba90492d96b18fd7b@bu.edu/8465f8a2656748afb748eb8d2b5a431c1685887659296623380/calendar.ics',
+		url: 'outlook.ics',
 		format: 'ics',
 	},
 	eventSourceSuccess() {

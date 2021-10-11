@@ -10,6 +10,7 @@ const capture = async () => {
 	});
 
 	await page.goto('https://ashleykolodziej.github.io/kindle-status/');
+	await page.waitForSelector('.fc');
 	await page.screenshot({
 		path: 'schedule.png',
 		fullPage: true,
