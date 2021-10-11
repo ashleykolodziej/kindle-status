@@ -29,3 +29,12 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run capture
+# Commits all changed files to the repository
+    - name: Commit to the repo
+      run: |
+        git config --global user.name "ashleykolodziej"
+        git config --global user.email "kindle-status[bot]@ashleykolodziej.github.io"
+        git add .
+        # "echo" returns true so the build succeeds, even if no changed files
+        git commit -m 'Capture file created.' || echo
+        git push
