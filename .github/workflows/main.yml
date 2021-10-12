@@ -52,3 +52,12 @@ jobs:
 
       - name: Capture it
         run: npm run capture
+
+      - name: Commit to the repo
+        run: |
+          git config --global user.name "ashleykolodziej"
+          git config --global user.email "kindle-status[bot]@ashleykolodziej.github.io"
+          git add .
+          # "echo" returns true so the build succeeds, even if no changed files
+          git commit -m 'Latest dashboard capture' || echo
+          git push
