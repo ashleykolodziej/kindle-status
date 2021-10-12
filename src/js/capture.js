@@ -17,13 +17,7 @@ const capture = async () => {
 	await page.screenshot({
 		path: 'schedule.png',
 		type: 'png',
-		fullPage: false,
-		clip: {
-			x: 0,
-			y: 0,
-			width: 600,
-			height: 800,
-		},
+		fullPage: true,
 	});
 
 	await browser.close();
