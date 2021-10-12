@@ -30,15 +30,6 @@ jobs:
       - name: Get the latest ICS file
         run: wget -O outlook.ics https://outlook.office365.com/owa/calendar/1bc7c0cffeb1419ba90492d96b18fd7b@bu.edu/8465f8a2656748afb748eb8d2b5a431c1685887659296623380/calendar.ics
 
-      - name: Commit to the repo
-        run: |
-          git config --global user.name "ashleykolodziej"
-          git config --global user.email "kindle-status[bot]@ashleykolodziej.github.io"
-          git add .
-          # "echo" returns true so the build succeeds, even if no changed files
-          git commit -m 'Latest Outlook file' || echo
-          git push
-
       - name: Build it.
         run: |
           npm install
