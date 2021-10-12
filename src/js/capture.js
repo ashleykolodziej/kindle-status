@@ -11,6 +11,9 @@ const capture = async () => {
 
 	await page.goto('https://ashleykolodziej.github.io/kindle-status/');
 	await page.waitForSelector('.fc');
+	await page.evaluate(() => {
+  		document.body.style.transform = 'rotate(-90deg)';
+	});
 	await page.screenshot({
 		path: 'schedule.png',
 		type: 'png',
