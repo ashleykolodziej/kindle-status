@@ -44,10 +44,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: NPM install & capture
-        run: |
-          npm install
-          node src/js/capture.js
+      - name: Capture
+        run: node src/js/capture.js
       - name: Commit to the repo
         run: |
           git config --global user.name "ashleykolodziej"
