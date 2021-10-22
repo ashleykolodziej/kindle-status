@@ -57,5 +57,5 @@ jobs:
           git add .
           # "echo" returns true so the build succeeds, even if no changed files
           git commit -m "Latest dashboard capture" || echo
-          git pull
+			 git pull --ff-only
           git push
