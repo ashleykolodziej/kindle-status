@@ -45,7 +45,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Capture
-        run: node src/js/capture.js
+        run: |
+          npm install puppeteer
+          node src/js/capture.js
       - name: Commit to the repo
         run: |
           git config --global user.name "ashleykolodziej"
