@@ -47,9 +47,8 @@ jobs:
       - name: NPM install & build
         run: |
           npm install
-          npm run build
       - name: Run capture
-        run: npm run capture
+        run: node src/js/capture.js
       - name: Commit to the repo
         run: |
           git config --global user.name "ashleykolodziej"
